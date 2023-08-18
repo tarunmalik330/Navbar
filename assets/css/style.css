@@ -4,6 +4,7 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
+  outline: 1px solid red;
 }
 
 .container {
@@ -13,12 +14,24 @@
   margin-left: auto;
   margin-right: auto;
 }
-.navcontainer{
-    max-width: 1140px;
+.navcontainer {
+  max-width: 1140px;
   padding-left: 12px;
   padding-right: 12px;
   margin-left: auto;
   margin-right: auto;
+}
+.mr_3{
+  margin-right: 3px;
+}
+.z-2{
+  z-index: 2 !important;
+}
+.rotate-90{
+  rotate: 90deg;
+}
+.position-relative{
+  position: relative;
 }
 .d_flex {
   display: flex;
@@ -32,14 +45,23 @@
 .justify_content_between {
   justify-content: space-between;
 }
+.align-items-center{
+  align-items: center;
+}
 .gap-48 {
   gap: 48px;
 }
 nav {
   width: 100%;
 }
-.bg_c{
-    background-color: orangered;
+.button {
+  padding: 13px 32px !important;
+  background-color: lightgreen !important;
+  border: 2px solid lightgreen !important;
+  border-radius: 12px;
+}
+.bg_c {
+  background-color: orangered;
 }
 nav li {
   display: inline-block;
@@ -47,14 +69,16 @@ nav li {
 .pl_24 {
   padding-left: 24px;
 }
-.p-tb{
-    padding: 12px 12px;
+.p-tb {
+  padding: 12px 12px;
 }
-.position{
-    position: sticky;
-    top: 0;
+.position {
+  position: sticky;
+  top: 0;
 }
-
+.d-none{
+  display: none;
+}
 @media (max-width: 576px) {
   .ul {
     flex-direction: column;
@@ -62,23 +86,45 @@ nav li {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 70%;
+    width: 100%;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
-    /* gap: 24px;
-    transition: linear 0.5s; */
+    /* gap: 24px; */
+    transition: all 0.3s linear;
   }
-  input[type ="checkbox"]:checked+ul{
+  input[type="checkbox"]:checked + ul {
     right: 0;
   }
-  .menu-btn{
+  label[for="menu_box"] > span {
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #ffffff;
+  }
+  input[type="checkbox"]:checked ~ ul.small_screen {
+    opacity: 1;
+    pointer-events: all;
+    left: 0%;
+    z-index: 1 !important;
+  }
+  label[for="menu_box"] > span {
+    width: 5px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  .menu-btn {
     z-index: 1;
   }
 }
 @media (min-width: 576px) {
-  
   .menu-btn {
     display: none;
+  }
+  .d-sm-block{
+    display: block;
   }
 }
